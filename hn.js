@@ -60,6 +60,8 @@ function fetchItems() {
   .then(items => {
     stories = stories.concat(items);
     stories = validateUrl(stories);
+    stories = storyFilter(stories);
+
     showItems(stories);
     hideInfo();
   })
@@ -103,4 +105,19 @@ function validateUrl(items) {
     if (!item.url) item.url = `https://news.ycombinator.com/item?id=${item.id}`;
     return item;
   });
+}
+
+function storyFilter(items) {
+  let stories = [];
+  stories = items.filter(youtubeFilter);
+  stories = items.filter(magzineFilter);
+  return stories;
+}
+
+function youtubeFilter(item) {
+  if ((new URL(item.url)).hostname !== 'www.youtube.com') return true;
+}
+
+function magzineFilter(item) {
+  if ((new URL(item.url)).hostname !== 'www.newyorker.com') return true;
 }

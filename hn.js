@@ -108,16 +108,39 @@ function validateUrl(items) {
 }
 
 function storyFilter(items) {
-  let stories = [];
-  stories = items.filter(youtubeFilter);
-  stories = items.filter(magzineFilter);
+  let stories = items
+    .filter(hostFilter)
+    .filter(emptyStoryFilter);
   return stories;
 }
 
-function youtubeFilter(item) {
-  if ((new URL(item.url)).hostname !== 'www.youtube.com') return true;
+function hostFilter(item) {
+  const hostArr = [
+    'www.youtube.com',
+    'youtube.com',
+    'youtu.be',
+    'www.newyorker.com',
+    'newyorker.com',
+    'www.washingtonpost.com',
+    'washingtonpost.com',
+    'ft.com',
+    'arxiv.org',
+    'leimao.github.io',
+    'pingcap.com',
+  ];
+  const host = new URL(item.url).hostname;
+  if (hostArr.includes(host)) {
+    return false;
+  }
+  return true;
 }
 
-function magzineFilter(item) {
-  if ((new URL(item.url)).hostname !== 'www.newyorker.com') return true;
+function emptyStoryFilter(item) {
+  if (
+    (new URL(item.url)).hostname === 'news.ycombinator.com' &&
+    item.descendants < 5
+  ) {
+    return false;
+  }
+  return true;
 }

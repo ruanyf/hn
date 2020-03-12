@@ -9,8 +9,15 @@ const startTime = Date.now();
 
 let isLoading = true;
 let loadingTimer;
+
 let storiesId = [];
+
+// filtered stories
 let stories = [];
+// origin all fetched stories
+let allStories = [];
+// unqualified stories
+let badStories = [];
 
 fetchItems();
 
@@ -40,7 +47,7 @@ function hideInfo() {
 }
 
 function fetchItems() {
-  showLoading()
+  showLoading();
 
   const p1 = fetch(topStoriesAPI);
   const p2 = fetch(newStoriesAPI);
@@ -58,11 +65,13 @@ function fetchItems() {
     return Promise.all(storiesId.map(getItem));
   })
   .then(items => {
-    stories = stories.concat(items);
-    stories = validateUrl(stories);
-    stories = storyFilter(stories);
+    allStories = allStories.concat(items.filter(i => i !== null));
+    allStories = validateUrl(allStories);
+
+    stories = storyFilter(allStories);
 
     showItems(stories);
+    secondList();
     hideInfo();
   })
   .catch(e => showError);
@@ -73,20 +82,25 @@ function getItem(id) {
     .then(response => response.json());
 }
 
-function showItem(item) {
+function showItem(item, isMainList = true) {
   const li = document.createElement('li');
   const titleLine = document.createElement('p');
   // titleLine.innerHTML = item.title;
   titleLine.innerHTML = itemLine(item);
   li.appendChild(titleLine);
 
-  const list = document.querySelector('.list');
+  let list;
+  if (isMainList) {
+    list = document.querySelector('.list');
+  } else {
+    list = document.querySelector('.second');
+  }
   list.appendChild(li);
 }
 
-function showItems(items) {
+function showItems(items, isMainList = true) {
   for (let i = 0; i < items.length; i++) {
-    showItem(items[i]);
+    showItem(items[i], isMainList);
   }
 }
 
@@ -110,6 +124,8 @@ function validateUrl(items) {
 function storyFilter(items) {
   let stories = items
     .filter(hostFilter)
+    .filter(keywordFilter)
+    .filter(jobFilter)
     .filter(emptyStoryFilter);
   return stories;
 }
@@ -130,9 +146,39 @@ function hostFilter(item) {
     'arxiv.org',
     'leimao.github.io',
     'pingcap.com',
+    'www.theatlantic.com',
+    'theatlantic.com',
+    'lrb.co.uk',
+    'www.lrb.co.uk',
   ];
   const host = new URL(item.url).hostname;
   if (hostArr.includes(host)) {
+    void badStories.push(item);
+    return false;
+  }
+  return true;
+}
+
+function keywordFilter(item) {
+  const keywords = [
+    /dao/i,
+    /\[video\]/i,
+    /Launch HN/i,
+  ];
+  const title = item.title || '';
+  for (let i = 0; i < keywords.length; i++) {
+    const regex = keywords[i];
+    if (regex.test(title)) {
+      void badStories.push(item);
+      return false;
+    }
+  }
+  return true;
+}
+
+function jobFilter(item) {
+  if (item.type === 'job') {
+    void badStories.push(item);
     return false;
   }
   return true;
@@ -143,7 +189,19 @@ function emptyStoryFilter(item) {
     (new URL(item.url)).hostname === 'news.ycombinator.com' &&
     item.descendants < 5
   ) {
+    void badStories.push(item);
     return false;
   }
   return true;
+}
+
+function secondList() {
+  if (badStories.length === 0) return;
+
+  const second = document.querySelector('.second');
+
+  const header = document.createElement('h2');
+  header.innerHTML = 'Backup News';
+  second.appendChild(header);
+  showItems(badStories, false);
 }

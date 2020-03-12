@@ -208,3 +208,4 @@ function secondList() {
   second.appendChild(header);
   showItems(badStories, false);
 }
+

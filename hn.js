@@ -153,6 +153,8 @@ function hostFilter(item) {
     'theatlantic.com',
     'lrb.co.uk',
     'www.lrb.co.uk',
+    'www.bloomberg.com',
+    'bloomberg.com',
   ];
   const host = new URL(item.url).hostname;
   if (hostArr.includes(host)) {

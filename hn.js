@@ -131,45 +131,39 @@ function storyFilter(items) {
 }
 
 function hostFilter(item) {
-  const hostArr = [
-    'www.youtube.com',
-    'youtube.com',
-    'youtu.be',
-    'm.youtube.com',
-    'www.newyorker.com',
-    'newyorker.com',
-    'www.washingtonpost.com',
-    'washingtonpost.com',
-    'www.economist.com',
-    'economist.com',
-    'www.wsj.com',
-    'wsj.com',
-    'ft.com',
-    'www.ft.com',
+  const screenHosts = [
     'arxiv.org',
-    'leimao.github.io',
-    'pingcap.com',
-    'www.theatlantic.com',
-    'theatlantic.com',
-    'lrb.co.uk',
-    'www.lrb.co.uk',
-    'www.bloomberg.com',
     'bloomberg.com',
+    'economist.com',
+    'ft.com',
+    'leimao.github.io',
+    'lrb.co.uk',
+    'newyorker.com',
+    'pingcap.com',
+    'theatlantic.com',
+    'washingtonpost.com',
+    'wsj.com',
+    'youtu.be',
+    'youtube.com',
   ];
   const host = new URL(item.url).hostname;
-  if (hostArr.includes(host)) {
-    void badStories.push(item);
-    return false;
+  for (let i = 0; i < screenHosts.length; i++) {
+    const screenItem = screenHosts[i];
+    if (host.includes(screenItem)) {
+      void badStories.push(item);
+      return false;
+    }
   }
   return true;
 }
 
 function keywordFilter(item) {
-  const keywords = [
-    /dao/i,
-    /\[video\]/i,
-    /Launch HN/i,
+  const screenedKeywords = [
+    'dao',
+    '\\[video\\]',
+    'Launch HN',
   ];
+  const keywords = screenedKeywords.map(w => new RegExp(w, 'i'));
   const title = item.title || '';
   for (let i = 0; i < keywords.length; i++) {
     const regex = keywords[i];

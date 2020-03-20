@@ -140,6 +140,7 @@ function hostFilter(item) {
     'lrb.co.uk',
     'newyorker.com',
     'pingcap.com',
+    'preprints.org',
     'theatlantic.com',
     'washingtonpost.com',
     'wsj.com',

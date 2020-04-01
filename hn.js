@@ -138,6 +138,7 @@ function hostFilter(item) {
     'www.ft.com',
     'leimao.github.io',
     'lrb.co.uk',
+    'medrxiv.org',
     'newyorker.com',
     'nih.gov',
     'pingcap.com',

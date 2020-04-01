@@ -135,7 +135,7 @@ function hostFilter(item) {
     'arxiv.org',
     'bloomberg.com',
     'economist.com',
-    'ft.com',
+    'www.ft.com',
     'leimao.github.io',
     'lrb.co.uk',
     'newyorker.com',

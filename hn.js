@@ -141,6 +141,7 @@ function hostFilter(item) {
     'medrxiv.org',
     'newyorker.com',
     'nih.gov',
+    'pnas.org',
     'pingcap.com',
     'preprints.org',
     'theatlantic.com',

@@ -165,6 +165,7 @@ function keywordFilter(item) {
   const screenedKeywords = [
     'dao',
     '\\[video\\]',
+    '\\[pdf\\]',
     'Launch HN',
   ];
   const keywords = screenedKeywords.map(w => new RegExp(w, 'i'));

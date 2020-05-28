@@ -144,6 +144,7 @@ function hostFilter(item) {
     'pnas.org',
     'pingcap.com',
     'preprints.org',
+    'science.sciencemag.org',
     'theatlantic.com',
     'washingtonpost.com',
     'wsj.com',

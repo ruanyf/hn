@@ -164,6 +164,7 @@ function hostFilter(item) {
 
 function keywordFilter(item) {
   const screenedKeywords = [
+    'coin',
     'dao',
     '\\[video\\]',
     '\\[pdf\\]',

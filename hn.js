@@ -166,6 +166,7 @@ function keywordFilter(item) {
   const screenedKeywords = [
     'coin',
     'dao',
+    'blockchain',
     '\\[video\\]',
     '\\[pdf\\]',
     'Launch HN',

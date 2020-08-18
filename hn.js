@@ -170,6 +170,7 @@ function keywordFilter(item) {
     '\\[video\\]',
     '\\[pdf\\]',
     'Launch HN',
+    'covid-19',
   ];
   const keywords = screenedKeywords.map(w => new RegExp(w, 'i'));
   const title = item.title || '';

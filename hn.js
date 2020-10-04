@@ -126,8 +126,24 @@ function storyFilter(items) {
     .filter(hostFilter)
     .filter(keywordFilter)
     .filter(jobFilter)
-    .filter(emptyStoryFilter);
+    .filter(emptyStoryFilter)
+    .filter(urlFilter);
   return stories;
+}
+
+function urlFilter(item) {
+  const url = item.url || '';
+  const screenUrls = [
+    'www.nature.com/articles/s',
+  ];
+  for (let i = 0; i < screenUrls.length; i++) {
+    const screenItem = screenUrls[i];
+    if (url.includes(screenItem)) {
+      void badStories.push(item);
+      return false;
+    }
+  }
+  return true;
 }
 
 function hostFilter(item) {

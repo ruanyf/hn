@@ -148,6 +148,8 @@ function urlFilter(item) {
 
 function hostFilter(item) {
   const screenHosts = [
+    'acm.org',
+    'aeon.co',
     'arxiv.org',
     'bloomberg.com',
     'economist.com',

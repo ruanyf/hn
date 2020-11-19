@@ -154,6 +154,7 @@ function hostFilter(item) {
     'bloomberg.com',
     'economist.com',
     'www.ft.com',
+    'sec.gov',
     'leimao.github.io',
     'lrb.co.uk',
     'medrxiv.org',

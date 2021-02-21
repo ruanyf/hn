@@ -150,6 +150,7 @@ function hostFilter(item) {
   const screenHosts = [
     'acm.org',
     'aeon.co',
+    'anandtech.com',
     'arxiv.org',
     'bloomberg.com',
     'economist.com',
@@ -160,6 +161,7 @@ function hostFilter(item) {
     'medrxiv.org',
     'newyorker.com',
     'nih.gov',
+    'nytimes.com',
     'pnas.org',
     'pingcap.com',
     'preprints.org',

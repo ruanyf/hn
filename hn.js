@@ -51,10 +51,11 @@ function fetchItems() {
 
   const p1 = fetch(topStoriesAPI);
   const p2 = fetch(newStoriesAPI);
+
   Promise.all([p1, p2])
-  .then(([responseTop, responseNew]) => 
-    Promise.all([responseTop.json(), responseNew.json()])
-  )
+  .then(([responseTop, responseNew]) => {
+    return Promise.all([responseTop.json(), responseNew.json()]);
+  })
   .then(([topStories, newStories]) => {
     storiesId.push(
       ...topStories.slice(0, itemsLength),
@@ -67,9 +68,7 @@ function fetchItems() {
   .then(items => {
     allStories = allStories.concat(items.filter(i => i !== null));
     allStories = validateUrl(allStories);
-
     stories = storyFilter(allStories);
-
     showItems(stories);
     secondList();
     hideInfo();
@@ -178,7 +177,12 @@ function hostFilter(item) {
     'youtu.be',
     'youtube.com',
   ];
-  const host = new URL(item.url).hostname;
+  let host;
+  try {
+    host = new URL(item.url).hostname;
+  } catch(e) {
+    return false;
+  }
   for (let i = 0; i < screenHosts.length; i++) {
     const screenItem = screenHosts[i];
     if (host.includes(screenItem)) {

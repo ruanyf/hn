@@ -134,6 +134,7 @@ function urlFilter(item) {
   const url = item.url || '';
   const screenUrls = [
     'www.nature.com/articles/s',
+    'pubcard.net',
   ];
   for (let i = 0; i < screenUrls.length; i++) {
     const screenItem = screenUrls[i];

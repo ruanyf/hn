@@ -171,6 +171,7 @@ function hostFilter(item) {
     'preprints.org',
     'quantamagazine.org',
     'sciencemag.org',
+    'seths.blog',
     'theatlantic.com',
     'vice.com',
     'washingtonpost.com',

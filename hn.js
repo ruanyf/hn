@@ -148,43 +148,56 @@ function urlFilter(item) {
 
 function hostFilter(item) {
   const screenHosts = [
-    'acm.org',
+    'www.acm.org',
     'aeon.co',
-    'atlasobscura.com',
-    'anandtech.com',
-    'arxiv.org',
-    'bloomberg.com',
-    'economist.com',
+    'aws.amazon.com',
+    'www.atlasobscura.com',
+    'www.anandtech.com',
+    'www.arxiv.org',
+    'www.bloomberg.com',
+    'developers.googleblog.com',
+    'www.economist.com',
+    'www.frontiersin.org',
     'www.ft.com',
     'sec.gov',
     'leimao.github.io',
-    'lrb.co.uk',
-    'medrxiv.org',
-    'nautil.us',
-    'newscientist.com',
-    'newyorker.com',
-    'nih.gov',
-    'nytimes.com',
+    'www.lrb.co.uk',
+    'medicalxpress.com',
+    'www.medrxiv.org',
+    'www.nautil.us',
+    'www.newscientist.com',
+    'www.newyorker.com',
+    'www.nih.gov',
+    'www.nytimes.com',
     'paulgraham.com',
-    'pnas.org',
-    'pingcap.com',
-    'preprints.org',
-    'quantamagazine.org',
-    'sciencemag.org',
+    'www.pnas.org',
+    'www.pingcap.com',
+    'www.preprints.org',
+    'www.quantamagazine.org',
+    'www.sciencemag.org',
     'seths.blog',
-    'theatlantic.com',
-    'vice.com',
-    'washingtonpost.com',
-    'wsj.com',
+    'www.theatlantic.com',
+    'www.vice.com',
+    'www.washingtonpost.com',
+    'www.wsj.com',
     'youtu.be',
-    'youtube.com',
+    'www.youtube.com',
   ];
+  const hostStr = screenHosts.join('');
+
   let host;
   try {
     host = new URL(item.url).hostname;
   } catch(e) {
     return false;
   }
+
+  if (hostStr.includes(host)) {
+    void badStories.push(item);
+    return false;
+  }
+
+  /*
   for (let i = 0; i < screenHosts.length; i++) {
     const screenItem = screenHosts[i];
     if (host.includes(screenItem)) {
@@ -192,6 +205,8 @@ function hostFilter(item) {
       return false;
     }
   }
+  */
+
   return true;
 }
 

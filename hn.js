@@ -232,6 +232,7 @@ function keywordFilter(item) {
     '\\[video\\]',
     '\\[pdf\\]',
     'Launch HN',
+    'Putin',
     'covid',
     'Ukraine',
     'Russia',

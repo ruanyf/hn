@@ -189,6 +189,7 @@ function hostFilter(item) {
     'publicdomainreview.org',
     'www.quantamagazine.org',
     'www.reuters.com',
+    'www.theregister.com',
     'journals.sagepub.com',
     'www.sciencedaily.com',
     'www.sciencemag.org',

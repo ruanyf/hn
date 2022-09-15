@@ -175,6 +175,7 @@ function hostFilter(item) {
     'www.lrb.co.uk',
     'medicalxpress.com',
     'www.medrxiv.org',
+    'microsoft.com',
     'www.nationalgeographic.com',
     'www.nature.com',
     'www.nautil.us',

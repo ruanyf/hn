@@ -134,7 +134,6 @@ function urlFilter(item) {
   const url = item.url || '';
   const screenUrls = [
     'www.nature.com/articles/s',
-    'pubcard.net',
   ];
   for (let i = 0; i < screenUrls.length; i++) {
     const screenItem = screenUrls[i];
@@ -147,6 +146,17 @@ function urlFilter(item) {
 }
 
 function hostFilter(item) {
+
+  // discarded Hosts
+  const discardHosts = [
+    'arxiv.org',
+    'pubcard.net',
+    'sec.gov',
+    'seths.blog',
+  ];
+  const discardHostsStr = discardHosts.join('');
+
+  // minor Hosts
   const screenHosts = [
     'www.acm.org',
     'aeon.co',
@@ -156,7 +166,6 @@ function hostFilter(item) {
     'www.atlasobscura.com',
     'www.anandtech.com',
     'apnews.com',
-    'www.arxiv.org',
     'www.axios.com',
     'www.bloomberg.com',
     'www.bmj.com',
@@ -168,7 +177,6 @@ function hostFilter(item) {
     'www.ft.com',
     'developers.googleblog.com',
     'www.theguardian.com',
-    'sec.gov',
     'highscalability.com',
     'leimao.github.io',
     'www.infoq.com',
@@ -198,7 +206,6 @@ function hostFilter(item) {
     'www.sciencedaily.com',
     'www.sciencemag.org',
     'www.scmp.com',
-    'seths.blog',
     'papers.ssrn.com',
     'techcrunch.com',
     'www.technologynetworks.com',
@@ -212,7 +219,7 @@ function hostFilter(item) {
     'youtu.be',
     'www.youtube.com',
   ];
-  const hostStr = screenHosts.join('');
+  const minorHostsStr = screenHosts.join('');
 
   let host;
   try {
@@ -221,7 +228,9 @@ function hostFilter(item) {
     return false;
   }
 
-  if (hostStr.includes(host)) {
+  if (discardHostsStr.includes(host)) return false;
+
+  if (minorHostsStr.includes(host)) {
     void badStories.push(item);
     return false;
   }
@@ -266,7 +275,7 @@ function keywordFilter(item) {
 
 function jobFilter(item) {
   if (item.type === 'job') {
-    void badStories.push(item);
+    // void badStories.push(item);
     return false;
   }
   return true;
@@ -277,7 +286,7 @@ function emptyStoryFilter(item) {
     (new URL(item.url)).hostname === 'news.ycombinator.com' &&
     item.descendants < 5
   ) {
-    void badStories.push(item);
+    // void badStories.push(item);
     return false;
   }
   return true;

@@ -150,6 +150,9 @@ function hostFilter(item) {
   // discarded Hosts
   const discardHosts = [
     'arxiv.org',
+    'www.laphamsquarterly.org',
+    'lithub.com',
+    'www.lrb.co.uk',
     'pubcard.net',
     'sec.gov',
     'seths.blog',
@@ -180,7 +183,6 @@ function hostFilter(item) {
     'highscalability.com',
     'leimao.github.io',
     'www.infoq.com',
-    'www.lrb.co.uk',
     'medicalxpress.com',
     'www.medrxiv.org',
     'microsoft.com',

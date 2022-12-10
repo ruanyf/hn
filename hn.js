@@ -153,9 +153,12 @@ function hostFilter(item) {
     'www.laphamsquarterly.org',
     'lithub.com',
     'www.lrb.co.uk',
+    'www.newyorker.com',
+    'www.paulgraham.com',
     'pubcard.net',
     'sec.gov',
     'seths.blog',
+    'unherd.com',
   ];
   const discardHostsStr = discardHosts.join('');
 
@@ -172,6 +175,7 @@ function hostFilter(item) {
     'www.axios.com',
     'www.bloomberg.com',
     'www.bmj.com',
+    'www.cbsnews.com',
     'www.cnbc.com',
     'lite.cnn.com',
     'www.cnn.com',
@@ -216,6 +220,7 @@ function hostFilter(item) {
     'www.vice.com',
     'www.washingtonpost.com',
     'en.wikipedia.org',
+    'www.wired.com',
     'www.whitehouse.gov',
     'www.wsj.com',
     'youtu.be',

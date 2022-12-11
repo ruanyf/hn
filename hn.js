@@ -156,6 +156,7 @@ function hostFilter(item) {
     'www.newyorker.com',
     'www.paulgraham.com',
     'pubcard.net',
+    'quillette.com',
     'sec.gov',
     'seths.blog',
     'unherd.com',
@@ -164,6 +165,7 @@ function hostFilter(item) {
 
   // minor Hosts
   const screenHosts = [
+    'www.abc.net.au',
     'www.acm.org',
     'aeon.co',
     'americanaffairsjournal.org',
@@ -172,7 +174,9 @@ function hostFilter(item) {
     'www.atlasobscura.com',
     'www.anandtech.com',
     'apnews.com',
+    'arstechnica.com',
     'www.axios.com',
+    'www.bbc.com',
     'www.bloomberg.com',
     'www.bmj.com',
     'www.cbsnews.com',
@@ -180,6 +184,7 @@ function hostFilter(item) {
     'lite.cnn.com',
     'www.cnn.com',
     'www.economist.com',
+    'news.harvard.edu',
     'www.frontiersin.org',
     'www.ft.com',
     'developers.googleblog.com',
@@ -198,7 +203,6 @@ function hostFilter(item) {
     'www.nih.gov',
     'www.ncbi.nlm.nih.gov',
     'www.nytimes.com',
-    'paulgraham.com',
     'phys.org',
     'www.pnas.org',
     'www.pingcap.com',
@@ -218,6 +222,7 @@ function hostFilter(item) {
     'www.theatlantic.com',
     'www.theverge.com',
     'www.vice.com',
+    'www.visualcapitalist.com',
     'www.washingtonpost.com',
     'en.wikipedia.org',
     'www.wired.com',
@@ -260,6 +265,7 @@ function keywordFilter(item) {
     'coin',
     'dao',
     'blockchain',
+    'ftx',
     '\\[video\\]',
     '\\[pdf\\]',
     'Launch HN',
@@ -273,7 +279,7 @@ function keywordFilter(item) {
   for (let i = 0; i < keywords.length; i++) {
     const regex = keywords[i];
     if (regex.test(title)) {
-      void badStories.push(item);
+      // void badStories.push(item);
       return false;
     }
   }

@@ -202,6 +202,7 @@ function hostFilter(item) {
     'www.newyorker.com',
     'www.nih.gov',
     'www.ncbi.nlm.nih.gov',
+    'www.npr.org',
     'www.nytimes.com',
     'phys.org',
     'www.pnas.org',

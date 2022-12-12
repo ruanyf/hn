@@ -149,6 +149,7 @@ function hostFilter(item) {
 
   // discarded Hosts
   const discardHosts = [
+    'www.atlasobscura.com',
     'arxiv.org',
     'www.laphamsquarterly.org',
     'lithub.com',
@@ -171,14 +172,15 @@ function hostFilter(item) {
     'americanaffairsjournal.org',
     'archive.org',
     'aws.amazon.com',
-    'www.atlasobscura.com',
     'www.anandtech.com',
     'apnews.com',
     'arstechnica.com',
     'www.axios.com',
     'www.bbc.com',
+    'www.bbc.co.uk',
     'www.bloomberg.com',
     'www.bmj.com',
+    'www.businessinsider.com',
     'www.cbsnews.com',
     'www.cnbc.com',
     'lite.cnn.com',
@@ -190,6 +192,7 @@ function hostFilter(item) {
     'developers.googleblog.com',
     'www.theguardian.com',
     'highscalability.com',
+    'www.latimes.com',
     'leimao.github.io',
     'www.infoq.com',
     'medicalxpress.com',

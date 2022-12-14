@@ -122,8 +122,8 @@ function validateUrl(items) {
 
 function storyFilter(items) {
   let stories = items
-    .filter(hostFilter)
     .filter(keywordFilter)
+    .filter(hostFilter)
     .filter(jobFilter)
     .filter(emptyStoryFilter)
     .filter(urlFilter);
@@ -146,7 +146,7 @@ function urlFilter(item) {
 }
 
 function hostFilter(item) {
-
+  console.log(item.title);
   // discarded Hosts
   const discardHosts = [
     'www.atlasobscura.com',
@@ -155,12 +155,14 @@ function hostFilter(item) {
     'lithub.com',
     'www.lrb.co.uk',
     'www.newyorker.com',
+    'www.ncbi.nlm.nih.gov',
     'www.paulgraham.com',
     'pubcard.net',
     'quillette.com',
     'sec.gov',
     'seths.blog',
     'unherd.com',
+    'yalereview.org',
   ];
   const discardHostsStr = discardHosts.join('');
 
@@ -204,7 +206,6 @@ function hostFilter(item) {
     'www.newscientist.com',
     'www.newyorker.com',
     'www.nih.gov',
-    'www.ncbi.nlm.nih.gov',
     'www.npr.org',
     'www.nytimes.com',
     'phys.org',
@@ -217,6 +218,7 @@ function hostFilter(item) {
     'www.reuters.com',
     'www.theregister.com',
     'journals.sagepub.com',
+    'www.science.org',
     'www.sciencedaily.com',
     'www.sciencemag.org',
     'www.scmp.com',

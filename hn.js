@@ -151,6 +151,8 @@ function hostFilter(item) {
   const discardHosts = [
     'www.atlasobscura.com',
     'arxiv.org',
+    'www.bostonreview.net',
+    'www.historytoday.com',
     'www.laphamsquarterly.org',
     'lithub.com',
     'www.lrb.co.uk',
@@ -219,6 +221,7 @@ function hostFilter(item) {
     'www.theregister.com',
     'journals.sagepub.com',
     'www.science.org',
+    'www.scientificamerican.com',
     'www.sciencedaily.com',
     'www.sciencemag.org',
     'www.scmp.com',

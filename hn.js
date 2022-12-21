@@ -277,6 +277,7 @@ function keywordFilter(item) {
     'coin',
     'dao',
     'blockchain',
+    'dreamwidth',
     'ftx',
     '\\[video\\]',
     '\\[pdf\\]',

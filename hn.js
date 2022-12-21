@@ -151,6 +151,7 @@ function hostFilter(item) {
   const discardHosts = [
     'www.atlasobscura.com',
     'arxiv.org',
+    'www.bmj.com',
     'www.bostonreview.net',
     'www.esquire.com',
     'www.historytoday.com',

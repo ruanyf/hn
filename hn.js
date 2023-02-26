@@ -174,6 +174,7 @@ function hostFilter(item) {
 
   // minor Hosts
   const screenHosts = [
+    '.gov',
     'www.abc.net.au',
     'www.acm.org',
     'aeon.co',
@@ -214,6 +215,7 @@ function hostFilter(item) {
     'www.nih.gov',
     'www.npr.org',
     'www.nytimes.com',
+    'old.reddit.com',
     'phys.org',
     'www.pnas.org',
     'www.pingcap.com',

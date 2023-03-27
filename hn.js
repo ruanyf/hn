@@ -174,7 +174,6 @@ function hostFilter(item) {
 
   // minor Hosts
   const screenHosts = [
-    '.gov',
     'www.abc.net.au',
     'www.acm.org',
     'aeon.co',
@@ -194,6 +193,7 @@ function hostFilter(item) {
     'www.cnbc.com',
     'lite.cnn.com',
     'www.cnn.com',
+    'dl.acm.org',
     'www.economist.com',
     'news.harvard.edu',
     'www.frontiersin.org',
@@ -225,6 +225,7 @@ function hostFilter(item) {
     'www.quantamagazine.org',
     'www.reuters.com',
     'www.theregister.com',
+    'twitter.com',
     'journals.sagepub.com',
     'www.science.org',
     'www.scientificamerican.com',

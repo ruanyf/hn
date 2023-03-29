@@ -158,6 +158,7 @@ function hostFilter(item) {
     'www.laphamsquarterly.org',
     'lithub.com',
     'www.lrb.co.uk',
+    'medicalxpress.com',
     'www.newyorker.com',
     'www.ncbi.nlm.nih.gov',
     'www.theparisreview.org',
@@ -175,6 +176,7 @@ function hostFilter(item) {
   // minor Hosts
   const screenHosts = [
     'www.abc.net.au',
+    'acoup.blog',
     'www.acm.org',
     'aeon.co',
     'americanaffairsjournal.org',
@@ -204,7 +206,6 @@ function hostFilter(item) {
     'www.latimes.com',
     'leimao.github.io',
     'www.infoq.com',
-    'medicalxpress.com',
     'www.medrxiv.org',
     'microsoft.com',
     'www.nationalgeographic.com',

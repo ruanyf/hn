@@ -164,6 +164,7 @@ function hostFilter(item) {
     'www.theparisreview.org',
     'www.paulgraham.com',
     'pubcard.net',
+    'psyche.co',
     'quillette.com',
     'roadmap.sh',
     'sec.gov',

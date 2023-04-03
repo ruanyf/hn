@@ -151,6 +151,7 @@ function hostFilter(item) {
   const discardHosts = [
     'www.atlasobscura.com',
     'arxiv.org',
+    'archive.org',
     'www.bmj.com',
     'www.bostonreview.net',
     'devblogs.microsoft.com',
@@ -185,7 +186,6 @@ function hostFilter(item) {
     'www.acm.org',
     'aeon.co',
     'americanaffairsjournal.org',
-    'archive.org',
     'aws.amazon.com',
     'www.anandtech.com',
     'apnews.com',

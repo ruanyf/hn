@@ -154,6 +154,7 @@ function hostFilter(item) {
     'archive.org',
     'www.bmj.com',
     'www.bostonreview.net',
+    'www.biorxiv.org',
     'devblogs.microsoft.com',
     'www.esquire.com',
     'hbr.org',

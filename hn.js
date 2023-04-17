@@ -159,6 +159,7 @@ function hostFilter(item) {
     'www.esquire.com',
     'hbr.org',
     'hedgehogreview.com',
+    'www.thehindu.com',
     'www.historytoday.com',
     'www.justice.gov',
     'www.laphamsquarterly.org',

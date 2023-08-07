@@ -133,12 +133,13 @@ function storyFilter(items) {
 function urlFilter(item) {
   const url = item.url || '';
   const screenUrls = [
-    'www.nature.com/articles/s',
+    'www.nature.com/articles',
+    'doi',
   ];
   for (let i = 0; i < screenUrls.length; i++) {
     const screenItem = screenUrls[i];
     if (url.includes(screenItem)) {
-      void badStories.push(item);
+      // void badStories.push(item);
       return false;
     }
   }
@@ -162,12 +163,14 @@ function hostFilter(item) {
     'ieeexplore.ieee.org',
     'www.thehindu.com',
     'www.historytoday.com',
+    'gwern.net',
     'www.justice.gov',
     'www.laphamsquarterly.org',
     'lithub.com',
     'www.lrb.co.uk',
     'medicalxpress.com',
     'www.nber.org',
+    'newrepublic.com',
     'www.newyorker.com',
     'www.ncbi.nlm.nih.gov',
     'www.theparisreview.org',
@@ -179,6 +182,7 @@ function hostFilter(item) {
     'roadmap.sh',
     'sec.gov',
     'seths.blog',
+    'www.smithsonianmag.com',
     'unherd.com',
     'yalereview.org',
   ];

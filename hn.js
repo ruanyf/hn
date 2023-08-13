@@ -157,6 +157,7 @@ function hostFilter(item) {
     'www.bostonreview.net',
     'www.biorxiv.org',
     'devblogs.microsoft.com',
+    'dl.acm.org',
     'www.esquire.com',
     'hbr.org',
     'hedgehogreview.com',

@@ -175,6 +175,7 @@ function hostFilter(item) {
     'www.newyorker.com',
     'www.ncbi.nlm.nih.gov',
     'papers.ssrn.com',
+    'www.quantamagazine.org',
     'www.theparisreview.org',
     'www.paulgraham.com',
     'pubcard.net',

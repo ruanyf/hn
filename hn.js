@@ -304,6 +304,7 @@ function keywordFilter(item) {
     'blockchain',
     'dreamwidth',
     'ftx',
+    'lgbt',
     '\\[video\\]',
     '\\[pdf\\]',
     'Launch HN',

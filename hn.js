@@ -151,6 +151,7 @@ function hostFilter(item) {
   // discarded Hosts
   const discardHosts = [
     'www.atlasobscura.com',
+    'www.theatlantic.com',
     'arxiv.org',
     'archive.org',
     'www.bmj.com',
